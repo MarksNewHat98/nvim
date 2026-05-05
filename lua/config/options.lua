@@ -7,3 +7,7 @@ local opt = vim.opt
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.relativenumber = false
+
+if vim.g.started_by_firenvim == true then
+  vim.o.laststatus = 0
+end

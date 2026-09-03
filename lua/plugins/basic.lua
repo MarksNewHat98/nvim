@@ -14,7 +14,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function(_, opts)
-            if opts.servers["*"] then
+            if opts.servers and opts.servers["*"] then
                 vim.lsp.config("*", opts.servers["*"])
             end
         end,

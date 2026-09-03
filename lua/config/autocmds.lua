@@ -6,3 +6,11 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+local api = vim.api
+
+api.nvim_create_autocmd("BufEnter", {
+  pattern = "github.com_*.txt",
+  command = "set filetype=markdown",
+})
+

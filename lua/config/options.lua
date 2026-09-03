@@ -1,13 +1,79 @@
--- Options are automatically loaded before lazy.nvim startup
--- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
--- Add any additional options here
+local opt, vig, vio = vim.opt, vim.g, vim.o
 
-local opt = vim.opt
+vig.mapleader = " "
+vig.maplocalleader = "\\"
 
+vig.autoformat = true
+vig.snacks_animate = false
+vig.lazyvim_picker = "auto"
+vig.lazyvim_cmp = "auto"
+vig.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
+vig.root_lsp_ignore = { "copilot" }
+vig.deprecation_warnings = false
+vig.trouble_lualine = true
+vig.markdown_recommended_style = 0
+
+opt.autowrite = true
+opt.clipboard = vim.env.SSH_CONNECTION and "" or "unnamedplus"
+opt.completeopt = "menu,menuone,noselect"
+opt.conceallevel = 2
+opt.confirm = true
+opt.cursorline = true
+opt.expandtab = true
+opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+opt.foldlevel = 99
+opt.foldmethod = "indent"
+opt.foldtext = ""
+--opt.formatexpr = "v:lua.LazyVim.format.formatexpr()"
+opt.formatoptions = "jcroqlnt"
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
+opt.ignorecase = true
+opt.inccommand = "nosplit"
+opt.jumpoptions = "view"
+opt.laststatus = 3
+opt.linebreak = true
+opt.list = true
+opt.mouse = ""
+opt.number = true
+opt.pumblend = 10
+opt.pumheight = 10
+opt.relativenumber = true
+opt.ruler = false
+opt.scrolloff = 4
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+opt.shiftround = true
 opt.shiftwidth = 4
+opt.shortmess:append({ W = true, I = true, c = true, C = true })
+opt.showmode = false
+opt.sidescrolloff = 8
+opt.signcolumn = "yes"
+opt.smartcase = true
+opt.smartindent = true
+opt.smoothscroll = false
+opt.spelllang = { "en" }
+opt.splitbelow = true
+opt.splitkeep = "screen"
+opt.splitright = true
+--opt.statuscolumn = [[%!v:lua.LazyVim.statuscolumn()]]
 opt.tabstop = 4
-opt.relativenumber = false
+opt.termguicolors = true
+opt.timeoutlen = vig.vscode and 1000 or 300
+opt.undofile = true
+opt.undolevels = 10000
+opt.updatetime = 200
+opt.virtualedit = "block"
+opt.wildmode = "longest:full,full"
+opt.winminwidth = 5
+opt.wrap = false
 
-if vim.g.started_by_firenvim == true then
-  vim.o.laststatus = 0
+if vig.started_by_firenvim == true then
+  vio.laststatus = 0
 end

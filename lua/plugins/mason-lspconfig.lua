@@ -6,8 +6,8 @@ return {
                 exclude = { "luau_lsp" },
             },
         },
-        config = function()
-            require("mason-lspconfig").setup({})
+        config = function(_, opts)
+            require("mason-lspconfig").setup(opts)
         end,
     },
 }

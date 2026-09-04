@@ -1,7 +1,6 @@
 return {
   {
     "lopi-py/luau-lsp.nvim",
-    commit = "97c4f40",
     opts = {
       platform = {
         type = "roblox",

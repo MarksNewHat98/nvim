@@ -45,7 +45,7 @@ return {
             { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
             { "<leader>su", function() Snacks.picker.undo() end, desc = "Undotree" },
         },
-        config = function()
+        config = function(_, opts)
             require("snacks").setup(opts)
         end,
     },

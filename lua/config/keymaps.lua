@@ -15,12 +15,13 @@ map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
+map("n", "<leader>sd", vim.diagnostic.open_float)
 map("n", "<leader>bd", function()
-  Snacks.bufdelete()
+    Snacks.bufdelete()
 end, { desc = "Delete Buffer" })
 
 map({ "i", "n", "s" }, "<esc>", function()
-  vim.cmd("noh")
-  return "<esc>"
+    vim.cmd("noh")
+    return "<esc>"
 end, { expr = true, desc = "Escape and Clear hlsearch" })
 
